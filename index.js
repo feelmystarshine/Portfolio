@@ -69,11 +69,36 @@ function smoothScroll(target, duration) {
     requestAnimationFrame(animation);
 }
 
-// Add event listeners to navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         var target = this.getAttribute('href');
         smoothScroll(target, 1000);
+    });
+});
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    fetch("https://formspree.io/f/your_formspree_endpoint", {
+        method: "POST",
+        body: new FormData(event.target),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            alert("Thanks for your submission!");
+            this.reset();
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    alert(data["errors"].map(error => error["message"]).join(", "));
+                } else {
+                    alert("Oops! There was a problem submitting your form");
+                }
+            })
+        }
+    }).catch(error => {
+        alert("Oops! There was a problem submitting your form");
     });
 });
