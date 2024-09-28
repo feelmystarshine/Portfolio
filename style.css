@@ -338,4 +338,8 @@ footer .footer_icon .fa-solid{
     .contact_content{
         padding-top: 50%;
     }
+    .name{
+        justify-content: center;
+        text-align: center;
+    }
 }
