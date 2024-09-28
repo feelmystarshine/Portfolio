@@ -318,6 +318,7 @@ footer .footer_icon .fa-solid{
     body{
         overflow-x: hidden;
         justify-content: center;
+        margin-right: 10%;
     }
     #home{
         display: grid;
@@ -333,5 +334,8 @@ footer .footer_icon .fa-solid{
     }
     .footer{
         margin-top: 50%;
+    }
+    .contact_content{
+        padding-top: 50%;
     }
 }
