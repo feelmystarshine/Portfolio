@@ -315,7 +315,10 @@ footer .footer_icon .fa-solid{
 
 
 @media screen and (max-width: 500px) {
-    
+    body{
+        overflow-x: hidden;
+        justify-content: center;
+    }
     #home{
         display: grid;
         grid-template-columns: 1fr;
