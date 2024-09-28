@@ -79,7 +79,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    fetch("https://formspree.io/f/your_formspree_endpoint", {
+    fetch("https://formspree.io/f/mvgpergv", {
         method: "POST",
         body: new FormData(event.target),
         headers: {
